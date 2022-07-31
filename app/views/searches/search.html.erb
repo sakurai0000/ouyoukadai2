@@ -1,0 +1,50 @@
+
+
+<table class="table table-hover table-inverse">
+
+  <% if @range == "User" %>
+    <tbody>
+      <h2>Users search for "test"</h2>
+<table class='table'>
+  <thead>
+    <tr>
+      <th>image</th>
+      <th>name</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+      <% @users.each do |user| %>
+      <tr>
+        <td><%= image_tag user.get_profile_image(50, 50) %></td>
+        <td><%= user.name %></td>
+        <td><%= link_to 'Show', user %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  <% elsif %>
+    <tbody>
+      <h2>Books search for "test"</h2>
+<table class='table'>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Title</th>
+      <th>Opinion</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+      <% @books.each do |book| %>
+        <tr>
+        <td><%= link_to(book.user) do %>
+          <%= image_tag book.user.get_profile_image(50, 50) %>
+          <% end %>
+        </td>
+        <td><%= link_to book.title,book %></td>
+        <td><%= book.body %></td>
+       
+      <% end %>
+    </tbody>
+  <% else %>
+  <p>見つかりませんでした</p>
+  <% end %>
+</table>
