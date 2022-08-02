@@ -21,7 +21,7 @@
       </tr>
       <% end %>
     </tbody>
-  <% elsif %>
+  <% else %>
     <tbody>
       <h2>Books search for "test"</h2>
 <table class='table'>
@@ -41,10 +41,7 @@
         </td>
         <td><%= link_to book.title,book %></td>
         <td><%= book.body %></td>
-       
       <% end %>
+     <% end %>
     </tbody>
-  <% else %>
-  <p>見つかりませんでした</p>
-  <% end %>
 </table>
